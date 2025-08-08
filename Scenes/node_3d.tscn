@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://csfpnfdolrruo"]
+
+[ext_resource type="PackedScene" uid="uid://p4g2wy6x1lw7" path="res://Assets/toycar.glb" id="1_m6h0c"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="toycar" parent="." instance=ExtResource("1_m6h0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0470746, 0, 0.191193)
