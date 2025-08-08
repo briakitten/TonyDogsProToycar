@@ -1,0 +1,1 @@
+git config --local submodule.recurse true

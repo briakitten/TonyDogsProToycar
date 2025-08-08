@@ -1,0 +1,3 @@
+[submodule "common/godot4_mem_tools"]
+	path = common/godot4_mem_tools
+	url = https://github.com/loteque/godot4_mem_tools.git
