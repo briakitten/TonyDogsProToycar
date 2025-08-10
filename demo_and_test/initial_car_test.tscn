@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://x73rqwlu21c7"]
+
+[ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://car/car.tscn" id="1_xb73n"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uviwu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hntx4"]
+albedo_texture = SubResource("PlaceholderTexture2D_uviwu")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wlcvq"]
+data = PackedVector3Array(-50, -0.1, 50, -50, -0.1, -50, -50, 0.1, -50, 50, -0.1, -50, -50, -0.1, -50, -50, -0.1, 50, -50, 0.1, -50, -50, -0.1, -50, 50, -0.1, -50, -50, 0.1, -50, -50, 0.1, 50, -50, -0.1, 50, -50, -0.1, 50, -50, 0.1, 50, 50, 0.1, 50, 50, 0.1, 50, -50, 0.1, 50, -50, 0.1, -50, -50, -0.1, 50, 50, -0.1, 50, 50, -0.1, -50, 50, 0.1, 50, 50, -0.1, 50, -50, -0.1, 50, 50, -0.1, -50, 50, -0.1, 50, 50, 0.1, 50, 50, -0.1, -50, 50, 0.1, -50, -50, 0.1, -50, -50, 0.1, -50, 50, 0.1, -50, 50, 0.1, 50, 50, 0.1, 50, 50, 0.1, -50, 50, -0.1, -50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xb73n"]
+data = PackedVector3Array(-0.5, -0.5, 0.878174, -0.5, -0.5, -0.878174, -0.5, 0.275596, -0.878174, -0.5, -0.5, 0.878174, 0.5, -0.5, -0.878174, -0.5, -0.5, -0.878174, -0.5, 0.275596, -0.878174, -0.5, -0.291181, 0.878174, -0.5, -0.5, 0.878174, -0.5, -0.291181, 0.878174, 0.5, -0.5, 0.878174, -0.5, -0.5, 0.878174, -0.5, -0.5, -0.878174, 0.5, 0.275596, -0.878174, -0.5, 0.275596, -0.878174, 0.5, 0.275596, -0.878174, -0.5, -0.5, -0.878174, 0.5, -0.5, -0.878174, 0.5, -0.291181, 0.878174, 0.5, 0.275596, -0.878174, 0.5, -0.5, -0.878174, -0.5, -0.5, 0.878174, 0.5, -0.5, 0.878174, 0.5, -0.5, -0.878174, 0.5, -0.5, 0.878174, -0.5, -0.291181, 0.878174, 0.5, -0.291181, 0.878174, 0.5, -0.5, -0.878174, 0.5, -0.5, 0.878174, 0.5, -0.291181, 0.878174, -0.5, 0.275596, -0.878174, 0.5, 0.275596, -0.878174, -0.5, -0.291181, 0.878174, 0.5, 0.275596, -0.878174, 0.5, -0.291181, 0.878174, -0.5, -0.291181, 0.878174)
+
+[node name="InitialCarTest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="PlayerController" parent="." instance=ExtResource("1_xb73n")]
+
+[node name="ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground"]
+size = Vector3(100, 0.2, 100)
+material = SubResource("StandardMaterial3D_hntx4")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="ground"]
+shape = SubResource("ConcavePolygonShape3D_wlcvq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0329, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.0182)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7666, 0, 0)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9487, 0, -24.7096)
+
+[node name="Ramp" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283752, -15.2562)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ramp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.378174)
+size = Vector3(1, 1, 1.75635)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ramp/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.307108, 0.951675, 0, -0.951675, 0.307108, 0, 0.439636, 0.241587)
+operation = 2
+size = Vector3(1, 2.18164, 1)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Ramp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.378174)
+shape = SubResource("ConcavePolygonShape3D_xb73n")
