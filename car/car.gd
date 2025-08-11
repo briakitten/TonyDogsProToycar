@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export_range(0.001, 10.0, 0.001) var rotation_speed = 10.0
 @export_range(0.0, 1.0, 0.01) var joystick_cam_sensitivity = 0.01
 @export_range(-90.0, 0.0, 0.1, "radians_as_degrees") var cam_max_vert = -PI/2
-@export_range(0.0, 90.0, 0.1, "radians_as_degrees") var cam_min_vert = PI/4
+@export_range(-10.0, 90.0, 0.1, "radians_as_degrees") var cam_min_vert = PI/4
 
 @onready var cam_arm = %CamSpringArm
 

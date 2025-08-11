@@ -23,6 +23,7 @@ shadow_enabled = true
 [node name="PlayerController" parent="." instance=ExtResource("1_xb73n")]
 weight = 97.0
 rotation_speed = 10.0
+cam_min_vert = 0.0
 
 [node name="ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
