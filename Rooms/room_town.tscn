@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwe1u0fnrlil1"]
+
+[ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://car/car.tscn" id="1_bomu3"]
+[ext_resource type="Texture2D" uid="uid://ct2liv452xdh6" path="res://lululululululululLUFFYSENPAI.png" id="2_4jixj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bomu3"]
+size = Vector3(1, 43.9182, 175.334)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d42i3"]
+albedo_color = Color(0.395916, 0.230317, 0.228244, 1)
+
+[node name="room_town" type="Node3D"]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.7443, -2.47936, 0.0407944)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.875, 21.5526, 5.90087)
+shape = SubResource("BoxShape3D_bomu3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4591, -1.15489)
+shape = SubResource("BoxShape3D_bomu3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 83.3317, 21.4591, 79.4549)
+shape = SubResource("BoxShape3D_bomu3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 83.3317, 21.4591, -70.202)
+shape = SubResource("BoxShape3D_bomu3")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 46491.6)
+texture = ExtResource("2_4jixj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33105, -1.5169, 4.40848)
+use_collision = true
+size = Vector3(162.712, 1, 166.318)
+material = SubResource("StandardMaterial3D_d42i3")
+
+[node name="Car" parent="." instance=ExtResource("1_bomu3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27075, 11.8062, -0.81172)
+rotation_speed = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.544624, 0.83868, 0, -0.83868, 0.544624, 0, 6.74718, 0)

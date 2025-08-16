@@ -25,3 +25,6 @@ movies/
 .idea/
 
 godot
+
+*.code-workspace
+.vscode
