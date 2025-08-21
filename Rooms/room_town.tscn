@@ -1,14 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://cwe1u0fnrlil1"]
+[gd_scene load_steps=18 format=3 uid="uid://cwe1u0fnrlil1"]
 
-[ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://car/car.tscn" id="1_bomu3"]
+[ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://Objects/car/car.tscn" id="1_bomu3"]
 [ext_resource type="Texture2D" uid="uid://ct2liv452xdh6" path="res://lululululululululLUFFYSENPAI.png" id="2_4jixj"]
 [ext_resource type="ArrayMesh" uid="uid://cop6to36c782c" path="res://Assets/ExtractedFiles/TownCollisionWalls_Cube_011.res" id="3_d42i3"]
-[ext_resource type="ArrayMesh" uid="uid://dbhebw71r1ami" path="res://Assets/ExtractedFiles/bigcar_Cylinder.res" id="3_nf8lf"]
 [ext_resource type="ArrayMesh" uid="uid://b4s056o5o6mly" path="res://Assets/ExtractedFiles/TownGround_Plane.res" id="4_1dlwo"]
-[ext_resource type="Texture2D" uid="uid://dcr28gab2gldg" path="res://Assets/bigcar_texture.png" id="4_t1rxw"]
 [ext_resource type="Texture2D" uid="uid://dom6iooamqnd1" path="res://Assets/TownGround_tilemap.png" id="5_1dlwo"]
 [ext_resource type="PackedScene" uid="uid://bcl5f0crc4ysy" path="res://Objects/realistic_explosion.tscn" id="7_tgnpl"]
 [ext_resource type="ArrayMesh" uid="uid://egp04sfvjdkl" path="res://Assets/ExtractedFiles/buildings/town_building_church_Cube_011.res" id="8_kkcfa"]
+[ext_resource type="PackedScene" uid="uid://bfb7yfl6ixya6" path="res://Objects/car_npc.tscn" id="8_p5pga"]
 [ext_resource type="Texture2D" uid="uid://dgdh461vttswx" path="res://Assets/church-textures1024.png" id="8_t1rxw"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d42i3"]
@@ -38,25 +37,12 @@ data = PackedVector3Array(-820.623, 18.0416, 193.253, -823.118, 16.2196, 174.693
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d42i3"]
 albedo_color = Color(0.146616, 0.229845, 0.50381, 1)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kkcfa"]
-friction = 0.5
-bounce = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkcfa"]
-diffuse_mode = 3
-albedo_texture = ExtResource("4_t1rxw")
-texture_filter = 0
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p5pga"]
-points = PackedVector3Array(-1.08393, 1.16255, -0.976795, -0.902924, 1.16255, -0.976795, -0.976018, 0.0154238, -0.841597, -1.15213, 0.320097, -0.841597, -1.56192, 0.277124, -0.728007, -1.56192, 0.543772, -0.728007, -1.5084, 0.810264, -0.728007, -1.35818, 1.02003, -0.728007, -0.604216, 1.59459, -0.647117, 0.694789, 1.59459, -0.647117, 1.33566, 1.03255, -0.728007, 0.869755, 0.624925, -0.841597, 1.04558, 0.320097, -0.841597, 0.869755, 0.0154238, -0.841597, -0.976018, 0.0154238, 0.841405, -1.56192, 0.277124, 0.727624, -1.56192, 0.543772, 0.727624, -1.5084, 0.810264, 0.727624, -1.35818, 1.02003, 0.727624, -0.604216, 1.59459, 0.646926, 0.694789, 1.59459, 0.646926, 1.33566, 1.03255, 0.727624, 1.37796, 0.526613, -0.728007, 1.37796, 0.277124, -0.728007, 0.869755, 0.0154238, 0.841405, -1.08393, 1.16255, 0.976795, -1.15213, 0.320097, 0.841405, -0.902924, 1.16255, 0.976795, 1.37796, 0.526613, 0.727624, 0.869755, 0.624925, 0.841405, 1.04558, 0.320097, 0.841405, 1.37796, 0.277124, 0.727624)
-
 [node name="room_town" type="Node3D"]
 
 [node name="Environment" type="Node" parent="."]
 
 [node name="TownCollisionWalls" type="MeshInstance3D" parent="Environment"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.8021, 5.64419, 2.33836)
-visible = false
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 mesh = ExtResource("3_d42i3")
 skeleton = NodePath("../..")
 
@@ -95,19 +81,20 @@ shape = SubResource("BoxShape3D_bomu3")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 83.3317, 21.4591, -70.202)
 shape = SubResource("BoxShape3D_bomu3")
 
-[node name="Node" type="Node3D" parent="Environment"]
+[node name="Ground" type="Node3D" parent="Environment"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
-[node name="TownGroundPlane" type="MeshInstance3D" parent="Environment/Node"]
+[node name="TownGroundPlane" type="MeshInstance3D" parent="Environment/Ground"]
 mesh = ExtResource("4_1dlwo")
-skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/room_town")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_tgnpl")
 
-[node name="Town Ground" type="StaticBody3D" parent="Environment/Node/TownGroundPlane"]
+[node name="Town Ground" type="StaticBody3D" parent="Environment/Ground/TownGroundPlane"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 69.0103, -28.221, -11.6918)
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_1dlwo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Node/TownGroundPlane/Town Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground/TownGroundPlane/Town Ground"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -13.8021, 5.6442, 2.33836)
 shape = SubResource("ConcavePolygonShape3D_kkcfa")
 
@@ -125,6 +112,9 @@ use_collision = true
 size = Vector3(162.712, 1, 166.318)
 material = SubResource("StandardMaterial3D_d42i3")
 
+[node name="CarNPC" parent="." instance=ExtResource("8_p5pga")]
+transform = Transform3D(0.995471, 0, 0.095064, 0, 1, 0, -0.095064, 0, 0.995471, -75.2194, 31.6249, 7.99413)
+
 [node name="Car" parent="." instance=ExtResource("1_bomu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294119, 11.8457, -0.820868)
 floor_stop_on_slope = false
@@ -134,19 +124,3 @@ rotation_speed = 10.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.544624, 0.83868, 0, -0.83868, 0.544624, 0.0520935, 25.1342, 0.0963593)
 directional_shadow_mode = 0
-
-[node name="CarNPC" type="RigidBody3D" parent="."]
-transform = Transform3D(0.995471, 0, 0.095064, 0, 1, 0, -0.095064, 0, 0.995471, -75.2194, 31.6249, 7.99413)
-disable_mode = 2
-physics_material_override = SubResource("PhysicsMaterial_kkcfa")
-can_sleep = false
-
-[node name="CarInstance" type="MeshInstance3D" parent="CarNPC"]
-transform = Transform3D(0.995471, 0, -0.095064, 0, 1, 0, 0.095064, 0, 0.995471, 0, 0, 0)
-mesh = ExtResource("3_nf8lf")
-skeleton = NodePath("../../../../../../../../../../../../../../../../../../../../../../../Node/TownGroundPlane/Town Ground")
-surface_material_override/0 = SubResource("StandardMaterial3D_kkcfa")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarNPC"]
-transform = Transform3D(0.995471, 0, -0.095064, 0, 1, 0, 0.095064, 0, 0.995471, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_p5pga")

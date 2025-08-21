@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bje6h4xa82cix"]
 
-[ext_resource type="Script" uid="uid://b61qlg4stbqd4" path="res://car/car.gd" id="1_2gitb"]
+[ext_resource type="Script" uid="uid://b61qlg4stbqd4" path="res://Objects/car/car.gd" id="1_2gitb"]
 [ext_resource type="PackedScene" uid="uid://p4g2wy6x1lw7" path="res://Assets/toycar.glb" id="2_dxy33"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_33qfd"]
@@ -9,6 +9,7 @@ radius = 0.310699
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_2gitb"]
 
 [node name="Car" type="CharacterBody3D"]
+collision_layer = 3
 script = ExtResource("1_2gitb")
 rotation_speed = 0.1
 joystick_cam_sensitivity = 1.0

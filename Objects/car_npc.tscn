@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfb7yfl6ixya6"]
+
+[ext_resource type="ArrayMesh" uid="uid://dbhebw71r1ami" path="res://Assets/ExtractedFiles/bigcar_Cylinder.res" id="1_ibife"]
+[ext_resource type="Script" uid="uid://kvamrmtow40a" path="res://Objects/car_npc.gd" id="1_wokri"]
+[ext_resource type="Texture2D" uid="uid://dcr28gab2gldg" path="res://Assets/bigcar_texture.png" id="2_wokri"]
+[ext_resource type="PackedScene" uid="uid://bcl5f0crc4ysy" path="res://Objects/realistic_explosion.tscn" id="4_vg8p2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kkcfa"]
+friction = 0.5
+bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkcfa"]
+diffuse_mode = 3
+albedo_texture = ExtResource("2_wokri")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p5pga"]
+points = PackedVector3Array(-1.08393, 1.16255, -0.976795, -0.902924, 1.16255, -0.976795, -0.976018, 0.0154238, -0.841597, -1.15213, 0.320097, -0.841597, -1.56192, 0.277124, -0.728007, -1.56192, 0.543772, -0.728007, -1.5084, 0.810264, -0.728007, -1.35818, 1.02003, -0.728007, -0.604216, 1.59459, -0.647117, 0.694789, 1.59459, -0.647117, 1.33566, 1.03255, -0.728007, 0.869755, 0.624925, -0.841597, 1.04558, 0.320097, -0.841597, 0.869755, 0.0154238, -0.841597, -0.976018, 0.0154238, 0.841405, -1.56192, 0.277124, 0.727624, -1.56192, 0.543772, 0.727624, -1.5084, 0.810264, 0.727624, -1.35818, 1.02003, 0.727624, -0.604216, 1.59459, 0.646926, 0.694789, 1.59459, 0.646926, 1.33566, 1.03255, 0.727624, 1.37796, 0.526613, -0.728007, 1.37796, 0.277124, -0.728007, 0.869755, 0.0154238, 0.841405, -1.08393, 1.16255, 0.976795, -1.15213, 0.320097, 0.841405, -0.902924, 1.16255, 0.976795, 1.37796, 0.526613, 0.727624, 0.869755, 0.624925, 0.841405, 1.04558, 0.320097, 0.841405, 1.37796, 0.277124, 0.727624)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wokri"]
+size = Vector3(4.2, 4.57, 5.74)
+
+[node name="CarNPC" type="RigidBody3D"]
+transform = Transform3D(0.995471, 0, 0.095064, 0, 1, 0, -0.095064, 0, 0.995471, 0, 0, 0)
+disable_mode = 2
+physics_material_override = SubResource("PhysicsMaterial_kkcfa")
+can_sleep = false
+script = ExtResource("1_wokri")
+
+[node name="CarInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.995471, 0, -0.095064, 0, 1, 0, 0.095064, 0, 0.995471, 0, 0, 0)
+mesh = ExtResource("1_ibife")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_kkcfa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.995471, 0, -0.095064, 0, 1, 0, 0.095064, 0, 0.995471, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_p5pga")
+
+[node name="CarShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76405, 0)
+shape = SubResource("BoxShape3D_wokri")
+target_position = Vector3(0, 0, 0)
+collision_mask = 2
+
+[node name="AnimatedRealisticExplosion" parent="." instance=ExtResource("4_vg8p2")]
+transform = Transform3D(1.99094, 0, -0.190128, 0, 2, 0, 0.190128, 0, 1.99094, 0, 0, 0)
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
