@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://brmy71ti4jrri"]
 
-[ext_resource type="Texture2D" uid="uid://bpjwut6kw2vim" path="res://Assets/toycar_toycar_texture.png" id="1_543w5"]
+[ext_resource type="Texture2D" uid="uid://bpjwut6kw2vim" path="res://Assets/Images/toycar_toycar_texture.png" id="1_543w5"]
 
 [resource]
 resource_name = "car"

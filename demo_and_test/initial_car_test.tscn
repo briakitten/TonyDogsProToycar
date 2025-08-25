@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://x73rqwlu21c7"]
 
-[ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://Objects/car/car.tscn" id="1_xb73n"]
+[ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://Objects/Entities/car.tscn" id="1_xb73n"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uviwu"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://csfpnfdolrruo"]
 
-[ext_resource type="PackedScene" uid="uid://p4g2wy6x1lw7" path="res://Assets/toycar.glb" id="1_m6h0c"]
+[ext_resource type="PackedScene" uid="uid://p4g2wy6x1lw7" path="res://Assets/ImportedFiles/toycar.glb" id="1_m6h0c"]
 
 [node name="Node3D" type="Node3D"]
 
