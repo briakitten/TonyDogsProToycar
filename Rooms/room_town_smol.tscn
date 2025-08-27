@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dqht0ic81whss"]
 
-[ext_resource type="ArrayMesh" uid="uid://egp04sfvjdkl" path="res://Assets/ExtractedFiles/Buildings/town_building_church_Cube_011.res" id="1_b1t6o"]
+[ext_resource type="ArrayMesh" uid="uid://egp04sfvjdkl" path="res://Assets/ExtractedFiles/buildings/town_building_church_Cube_011.res" id="1_b1t6o"]
 [ext_resource type="Texture2D" uid="uid://dgdh461vttswx" path="res://Assets/Images/church-textures1024.png" id="2_ygank"]
 [ext_resource type="PackedScene" uid="uid://bfb7yfl6ixya6" path="res://Objects/Entities/car_npc.tscn" id="3_ygank"]
 [ext_resource type="PackedScene" uid="uid://bje6h4xa82cix" path="res://Objects/Entities/car.tscn" id="4_8xnuk"]

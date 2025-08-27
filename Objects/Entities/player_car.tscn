@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://di13psjgqfcnc"]
+
+[ext_resource type="ArrayMesh" uid="uid://u7icyvy3asfn" path="res://Assets/ExtractedFiles/toycar_Cube.res" id="1_y6j65"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ydrte"]
+radius = 1.0
+
+[node name="PlayerCar" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_ydrte")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+mesh = ExtResource("1_y6j65")
