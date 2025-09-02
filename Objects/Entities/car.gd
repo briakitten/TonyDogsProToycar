@@ -11,6 +11,7 @@
 # [x] Remove the brake action, and make opposing directions brake instead
 # [] Car body parralell to ground normals
 extends CharacterBody3D
+#test
 
 @export_range(1.0, 100.0, 0.5) var speed = 10.0
 @export_range(0.0, 100.0, 1) var friction = 81.0
