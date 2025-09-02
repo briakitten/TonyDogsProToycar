@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyh148rdida7l"]
+
+[ext_resource type="PackedScene" uid="uid://p4g2wy6x1lw7" path="res://Assets/ImportedFiles/toycar.glb" id="1_5jint"]
+[ext_resource type="Script" uid="uid://bugpdcxox3ud0" path="res://Objects/Entities/mar_car.gd" id="1_w3811"]
+[ext_resource type="Script" uid="uid://cv2h5kw5e4wa5" path="res://Objects/Entities/camera_3d.gd" id="3_wkg4h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3811"]
+size = Vector3(0.437, 0.59, 0.565)
+
+[node name="MarCar" type="CharacterBody3D"]
+collision_layer = 3
+script = ExtResource("1_w3811")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.615, 0, 0, 0, 1.615, 0, 0, 0, 1.615, -0.0389829, 0.473416, 0.076538)
+shape = SubResource("BoxShape3D_w3811")
+
+[node name="ToyCar" parent="." instance=ExtResource("1_5jint")]
+transform = Transform3D(7.15493e-09, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.15493e-09, -0.0398499, -0.00359926, 0.0765369)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.967775, 0.251816, 0, -0.251816, 0.967775, 0, 2.73983, 7.17341)
+script = ExtResource("3_wkg4h")
