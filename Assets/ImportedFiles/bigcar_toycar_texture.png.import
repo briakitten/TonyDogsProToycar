@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5gr7eeluoq0b"
-path.s3tc="res://.godot/imported/toycar_toycar_texture.png-8539e9338a14af4d990a5d6a68aec11d.s3tc.ctex"
+uid="uid://devugnpmf3yq4"
+path.s3tc="res://.godot/imported/bigcar_toycar_texture.png-73ef16392cc2d678fd7f99b3fa15c39c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/ImportedFiles/toycar_toycar_texture.png"
-dest_files=["res://.godot/imported/toycar_toycar_texture.png-8539e9338a14af4d990a5d6a68aec11d.s3tc.ctex"]
+source_file="res://Assets/ImportedFiles/bigcar_toycar_texture.png"
+dest_files=["res://.godot/imported/bigcar_toycar_texture.png-73ef16392cc2d678fd7f99b3fa15c39c.s3tc.ctex"]
 
 [params]
 

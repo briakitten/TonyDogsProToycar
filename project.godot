@@ -23,6 +23,10 @@ window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 look_down={

@@ -40,37 +40,53 @@ _subresources={
 }
 },
 "meshes": {
-"toycar_Cube": {
+"toycar_Cube_002": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/ExtractedFiles/toycar_Cube.res"
+"save_to_file/path": "res://Assets/ExtractedFiles/toy car/toycar_Cube_002.res"
 },
-"toycar_Cube_001": {
+"toycar_Cylinder_006": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/ExtractedFiles/toycar_Cube_001.res"
+"save_to_file/path": "res://Assets/ExtractedFiles/toy car/toycar_Cylinder_006.res"
 },
-"toycar_Cylinder_001": {
+"toycar_Cylinder_011": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/ExtractedFiles/toycar_Cylinder_001.res"
+"save_to_file/path": "res://Assets/ExtractedFiles/toy car/toycar_Cylinder_011.res"
 },
-"toycar_Plane": {
+"toycar_Cylinder_022": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/ExtractedFiles/toycar_Plane.res"
+"save_to_file/path": "res://Assets/ExtractedFiles/toy car/toycar_Cylinder_022.res"
+},
+"toycar_Cylinder_031": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Assets/ExtractedFiles/toy car/toycar_Cylinder_031.res"
+},
+"toycar_steering-wheel": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Assets/ExtractedFiles/toy car/toycar_steering-wheel.res"
 }
 }
 }

@@ -1,16 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://di13psjgqfcnc"]
+[gd_scene load_steps=10 format=3 uid="uid://di13psjgqfcnc"]
 
-[ext_resource type="ArrayMesh" uid="uid://u7icyvy3asfn" path="res://Assets/ExtractedFiles/toycar_Cube.res" id="1_y6j65"]
+[ext_resource type="ArrayMesh" uid="uid://303dm2scpyde" path="res://Assets/ExtractedFiles/toy car/toycar_Cube_002.res" id="1_0vctg"]
+[ext_resource type="Script" uid="uid://d3knui0hoc8k" path="res://Objects/Entities/player_car.gd" id="1_sv1eo"]
+[ext_resource type="ArrayMesh" uid="uid://cwqpquaxd8yr8" path="res://Assets/ExtractedFiles/toy car/toycar_Cylinder_006.res" id="2_sv1eo"]
+[ext_resource type="ArrayMesh" uid="uid://chvqs2u4nclpg" path="res://Assets/ExtractedFiles/toy car/toycar_Cylinder_011.res" id="3_80m7q"]
+[ext_resource type="ArrayMesh" uid="uid://catyehfxkrcfx" path="res://Assets/ExtractedFiles/toy car/toycar_Cylinder_022.res" id="4_ec28i"]
+[ext_resource type="ArrayMesh" uid="uid://caxmxr07y5hb7" path="res://Assets/ExtractedFiles/toy car/toycar_Cylinder_031.res" id="5_0hx8r"]
+[ext_resource type="ArrayMesh" uid="uid://cg7dcoodvokgr" path="res://Assets/ExtractedFiles/toy car/toycar_steering-wheel.res" id="6_h25rx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6j65"]
+bounce = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ydrte"]
-radius = 1.0
+radius = 0.8
 
 [node name="PlayerCar" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_y6j65")
+gravity_scale = 5.0
+angular_damp = 10.0
+script = ExtResource("1_sv1eo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("SphereShape3D_ydrte")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
-mesh = ExtResource("1_y6j65")
+[node name="CarMesh" type="Node3D" parent="."]
+
+[node name="CarBody" type="Node3D" parent="CarMesh"]
+
+[node name="ToycarCube002" type="MeshInstance3D" parent="CarMesh/CarBody"]
+mesh = ExtResource("1_0vctg")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/PlayerCar")
+
+[node name="ToycarSteering-wheel" type="MeshInstance3D" parent="CarMesh/CarBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.8, 0)
+mesh = ExtResource("6_h25rx")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/PlayerCar")
+
+[node name="TireBackLeft" type="MeshInstance3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.165, 0.55)
+mesh = ExtResource("2_sv1eo")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/PlayerCar")
+
+[node name="TireFrontLeft" type="MeshInstance3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.165, 0.55)
+mesh = ExtResource("3_80m7q")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/PlayerCar")
+
+[node name="TireBackRight" type="MeshInstance3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.165, -0.55)
+mesh = ExtResource("4_ec28i")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/PlayerCar")
+
+[node name="TireFrontRight" type="MeshInstance3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.165, -0.55)
+mesh = ExtResource("5_0hx8r")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/PlayerCar")
+
+[node name="RayCast3D" type="RayCast3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
