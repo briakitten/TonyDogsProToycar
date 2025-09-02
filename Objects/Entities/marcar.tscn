@@ -17,7 +17,7 @@ transform = Transform3D(1.615, 0, 0, 0, 1.615, 0, 0, 0, 1.615, -0.0389829, 0.473
 shape = SubResource("BoxShape3D_w3811")
 
 [node name="ToyCar" parent="." instance=ExtResource("1_5jint")]
-transform = Transform3D(7.15493e-09, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.15493e-09, -0.0398499, -0.00359926, 0.0765369)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -0.0398499, -0.00359926, 0.0765369)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.967775, 0.251816, 0, -0.251816, 0.967775, 0, 2.73983, 7.17341)
