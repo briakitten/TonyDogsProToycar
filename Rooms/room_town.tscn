@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b4s056o5o6mly" path="res://Assets/ExtractedFiles/TownGround_Plane.res" id="4_1dlwo"]
 [ext_resource type="Texture2D" uid="uid://dom6iooamqnd1" path="res://Assets/Images/TownGround_tilemap.png" id="5_1dlwo"]
 [ext_resource type="PackedScene" uid="uid://bcl5f0crc4ysy" path="res://Objects/realistic_explosion.tscn" id="7_tgnpl"]
-[ext_resource type="ArrayMesh" uid="uid://egp04sfvjdkl" path="res://Assets/ExtractedFiles/Buildings/town_building_church_Cube_011.res" id="8_kkcfa"]
+[ext_resource type="ArrayMesh" uid="uid://egp04sfvjdkl" path="res://Assets/ExtractedFiles/buildings/town_building_church_Cube_011.res" id="8_kkcfa"]
 [ext_resource type="PackedScene" uid="uid://bfb7yfl6ixya6" path="res://Objects/Entities/car_npc.tscn" id="8_p5pga"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d42i3"]

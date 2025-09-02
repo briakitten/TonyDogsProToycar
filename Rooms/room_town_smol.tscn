@@ -24,10 +24,6 @@ data = PackedVector3Array(5.2788, 1.0434, -1.915, 5.2788, 3.3507, -2.3106, 5.278
 
 [node name="RoomTownSmal" type="Node3D"]
 
-[node name="Car" parent="." instance=ExtResource("4_8xnuk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9943, 26.7664, -2.23842)
-rotation_speed = 10.0
-
 [node name="Environment" type="Node" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
@@ -114,3 +110,7 @@ transform = Transform3D(0.995471, 0, 0.095064, 0, 1, 0, -0.095064, 0, 0.995471, 
 
 [node name="CarNPC13" parent="npcs" instance=ExtResource("3_ygank")]
 transform = Transform3D(0.995471, 0, 0.095064, 0, 1, 0, -0.095064, 0, 0.995471, -19.9173, 3.88063, 0)
+
+[node name="Car" parent="." instance=ExtResource("4_8xnuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 1, 5)
+rotation_speed = 10.0

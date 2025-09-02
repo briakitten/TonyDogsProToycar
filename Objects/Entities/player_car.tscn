@@ -26,6 +26,9 @@ shape = SubResource("SphereShape3D_ydrte")
 
 [node name="CarMesh" type="Node3D" parent="."]
 
+[node name="Camera" type="Camera3D" parent="CarMesh"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 2, 0)
+
 [node name="CarBody" type="Node3D" parent="CarMesh"]
 
 [node name="ToycarCube002" type="MeshInstance3D" parent="CarMesh/CarBody"]
