@@ -43,6 +43,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump_force
 		jump_ongoing = true
+		stretch()
 	if Input.is_action_just_released("jump") or jump_count == 20:
 		jump_ongoing = false
 		jump_count = 0
@@ -81,5 +82,14 @@ func squish(): #this is way too manual, could be vastly imrpoveddda
 	toy_car.scale.y *= 0.9
 	await get_tree().create_timer(0.05).timeout
 	toy_car.scale.y *= 1.1
+	await get_tree().create_timer(0.05).timeout
+	toy_car.scale.y = starting_scale
+	
+func stretch(): #this is way too manual, could be vastly imrpoveddda
+	toy_car.scale.y *= 1.1
+	await get_tree().create_timer(0.05).timeout
+	toy_car.scale.y *= 1.1
+	await get_tree().create_timer(0.05).timeout
+	toy_car.scale.y *= 0.9
 	await get_tree().create_timer(0.05).timeout
 	toy_car.scale.y = starting_scale
