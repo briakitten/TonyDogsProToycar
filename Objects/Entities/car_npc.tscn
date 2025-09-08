@@ -23,6 +23,7 @@ size = Vector3(4.2, 4.57, 5.74)
 [node name="CarNPC" type="RigidBody3D"]
 transform = Transform3D(0.995471, 0, 0.095064, 0, 1, 0, -0.095064, 0, 0.995471, 0, 0, 0)
 disable_mode = 2
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_kkcfa")
 can_sleep = false
 script = ExtResource("1_wokri")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://di13psjgqfcnc"]
+[gd_scene load_steps=9 format=3 uid="uid://di13psjgqfcnc"]
 
 [ext_resource type="ArrayMesh" uid="uid://303dm2scpyde" path="res://Assets/ExtractedFiles/toy car/toycar_Cube_002.res" id="1_0vctg"]
 [ext_resource type="Script" uid="uid://d3knui0hoc8k" path="res://Objects/Entities/player_car.gd" id="1_sv1eo"]
@@ -8,26 +8,23 @@
 [ext_resource type="ArrayMesh" uid="uid://caxmxr07y5hb7" path="res://Assets/ExtractedFiles/toy car/toycar_Cylinder_031.res" id="5_0hx8r"]
 [ext_resource type="ArrayMesh" uid="uid://cg7dcoodvokgr" path="res://Assets/ExtractedFiles/toy car/toycar_steering-wheel.res" id="6_h25rx"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6j65"]
-bounce = 0.1
+[sub_resource type="BoxShape3D" id="BoxShape3D_ec28i"]
+size = Vector3(0.437, 0.59, 0.565)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ydrte"]
-radius = 0.8
-
-[node name="PlayerCar" type="RigidBody3D"]
-physics_material_override = SubResource("PhysicsMaterial_y6j65")
-gravity_scale = 5.0
-angular_damp = 10.0
+[node name="PlayerCar" type="CharacterBody3D"]
+collision_layer = 3
 script = ExtResource("1_sv1eo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-shape = SubResource("SphereShape3D_ydrte")
+transform = Transform3D(1.615, 0, 0, 0, 1.615, 0, 0, 0, 1.615, -0.0389829, 0.473416, 0.076538)
+shape = SubResource("BoxShape3D_ec28i")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.967775, 0.251816, 0, -0.251816, 0.967775, 0, 2.73983, 5.17341)
+current = true
 
 [node name="CarMesh" type="Node3D" parent="."]
-
-[node name="Camera" type="Camera3D" parent="CarMesh"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 2, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CarBody" type="Node3D" parent="CarMesh"]
 

@@ -15,9 +15,10 @@ func switch_room(node_key:String) -> void:
     get_tree().root.get_child(current_room_index).free()
     
     # get new room
-    var node:Node = rooms_dictionary.get(node_key)
+    var node := rooms_dictionary.get(node_key) as Node
     current_room_index = node.get_index()
     current_room = node_key
+    
 
     # add new room to scene
     get_tree().root.add_child(node)
