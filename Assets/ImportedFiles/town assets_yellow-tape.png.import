@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://sbm01v4uday7"
+path.s3tc="res://.godot/imported/town assets_yellow-tape.png-4c4c4a4fcb3978d5f31768890a246e74.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a9e1cdacabf5ce97be6db57aff2ff1a6"
+}
+
+[deps]
+
+source_file="res://Assets/ImportedFiles/town assets_yellow-tape.png"
+dest_files=["res://.godot/imported/town assets_yellow-tape.png-4c4c4a4fcb3978d5f31768890a246e74.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
